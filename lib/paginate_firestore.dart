@@ -17,7 +17,7 @@ import 'widgets/initial_loader.dart';
 
 class PaginateFirestore extends StatefulWidget {
   const PaginateFirestore({
-    Key? key,
+    super.key,
     required this.itemBuilder,
     required this.query,
     required this.itemBuilderType,
@@ -48,7 +48,7 @@ class PaginateFirestore extends StatefulWidget {
     this.isLive = false,
     this.includeMetadataChanges = false,
     this.options,
-  }) : super(key: key);
+  });
 
   final Widget bottomLoader;
   final Widget onEmpty;
@@ -80,7 +80,7 @@ class PaginateFirestore extends StatefulWidget {
   final bool includeMetadataChanges;
 
   @override
-  _PaginateFirestoreState createState() => _PaginateFirestoreState();
+  PaginateFirestoreState createState() => PaginateFirestoreState();
 
   final Widget Function(Exception)? onError;
 
@@ -93,7 +93,7 @@ class PaginateFirestore extends StatefulWidget {
   final void Function(int)? onPageChanged;
 }
 
-class _PaginateFirestoreState extends State<PaginateFirestore> {
+class PaginateFirestoreState extends State<PaginateFirestore> {
   PaginationCubit? _cubit;
 
   @override
